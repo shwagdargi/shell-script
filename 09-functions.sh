@@ -1,6 +1,10 @@
 #!/bin/bash
 
-USERID=$(id -u)
+DATE=$(date +%F)
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
+
+
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -12,16 +16,18 @@ VALIDATE(){
     fi
 }
 
+USERID=$(id -u)
+
 if [ $USERID -ne 0 ]
 then
     echo "Error::: Please  run this script with root"
     exit 1
 fi
 
-yum install mysql -y
+yum install mysql -y &>>$LOGFILE
 
 VALIDATE $? "Installingn Mysql"
 
-yum install postfix -y
+yum install postfix -y &>>$LOGFILE
 
 VALIDATE $? "Installing Postfix"
