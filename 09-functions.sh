@@ -24,4 +24,4 @@ VALIDATE $? "Installingn Mysql"
 
 yum install postfix -y
 
-VALIDATE $? ""Installing Postfix"
+VALIDATE $? "Installing Postfix"
