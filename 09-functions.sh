@@ -3,12 +3,12 @@
 USERID=$(id -u)
 
 VALIDATE(){
-    if [ $? -ne 0 ]
+    if [ $1 -ne 0 ]
     then    
-        echo "$2........FAILURE"
+        echo "Installation........FAILURE"
         exit 1
     else
-        echo "$2 .......SUCCESS"
+        echo "Installation .......SUCCESS"
     fi
 }
 
