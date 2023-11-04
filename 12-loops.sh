@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATE=$(date %+F)
+DATE=$(date +%F)
 LOGSDIR=/home/centos/shellscript-logs
 
 SCRIPT_NAME=$0
@@ -36,5 +36,5 @@ do
     else
         echo -e "$Y $i is already installed $N"
     fi
-    
+
 done
